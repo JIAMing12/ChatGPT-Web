@@ -474,45 +474,20 @@ onUnmounted(() => {
       @export="handleExport"
       @toggle-using-context="toggleUsingContext"
     />
-    <main class="flex-1 overflow-hidden">
-      <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
-        <div
-          id="image-wrapper"
-          class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
-          :class="[isMobile ? 'p-2' : 'p-4']"
-        >
-          <template v-if="!dataSources.length">
-            <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
-              <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-              <span>Aha~</span>
-            </div>
-          </template>
-          <template v-else>
-            <div>
-              <Message
-                v-for="(item, index) of dataSources"
-                :key="index"
-                :date-time="item.dateTime"
-                :text="item.text"
-                :inversion="item.inversion"
-                :error="item.error"
-                :loading="item.loading"
-                @regenerate="onRegenerate(index)"
-                @delete="handleDelete(index)"
-              />
-              <div class="sticky bottom-0 left-0 flex justify-center">
-                <NButton v-if="loading" type="warning" @click="handleStop">
-                  <template #icon>
-                    <SvgIcon icon="ri:stop-circle-line" />
-                  </template>
-                  Stop Responding
-                </NButton>
-              </div>
-            </div>
-          </template>
-        </div>
-      </div>
-    </main>
+    <main class="flex-1 overflow-hidden"><div id="scrollRef" class="h-full overflow-hidden overflow-y-auto"><div id="image-wrapper" class="w-full max-w-screen-xl m-auto dark:bg-[#101014] p-4"><div class="flex items-center flex-col justify-center mt-4 text-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="mr-2 text-3xl iconify iconify--ri" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M16 16a3 3 0 1 1 0 6a3 3 0 0 1 0-6ZM6 12a4 4 0 1 1 0 8a4 4 0 0 1 0-8Zm8.5-10a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z"></path></svg><div><div><b>永久免费用于学习和测试,底下输入框输入就能直接用～</b>，搜索模式暂不可用，正在想办法</div>
+<div><b><span style="color:red;">收藏当前页面即可永不迷路，点击左下角捐赠按钮可一直看到最新存活 </span>
+<div>禁止发布、传播任何违法、违规内容，使用本网站，视您接受并同意<a target="_blank" style="color:#006eff;" href="https://docs.qq.com/doc/DVFdaY1lvWHFSWU5w">《免责声明》</a></div>
+<div>服务器昂贵,接口昂贵,但网站免费！！如果你觉得做的好，可以给我买一瓶冰阔落</div>
+<b style="color:red;">每人每月捐个三元、服务就能永久免费下去！！</b>
+<div style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+">
+<img src="https://static.binjie.site:7777/assets/kele.jpg" alt="kele" width="200" height="100"></div>
+
+<span style="display: none">https://api.binjie.fun/api/generateStream</span>
+</div></div></div></div></main>
     <footer :class="footerClass">
       <div class="w-full max-w-screen-xl m-auto">
         <div class="flex items-center justify-between space-x-2">
